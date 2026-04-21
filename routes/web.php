@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\CitaController;
+use App\Http\Controllers\Admin\SupportTicketController;
 
 Route::redirect('/', '/admin');
 
@@ -46,4 +47,7 @@ Route::middleware([
     Route::get('admin/support', function () {
         return view('admin.support.index');
     })->name('admin.support.index');
+
+    // Support routes
+    Route::resource('admin/support-tickets', SupportTicketController::class)->names('admin.support-tickets');
 });
