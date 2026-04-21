@@ -48,6 +48,6 @@ Route::middleware([
         return view('admin.support.index');
     })->name('admin.support.index');
 
-    // Rutas de soporte
+    // Support routes
     Route::resource('admin/support-tickets', SupportTicketController::class)->names('admin.support-tickets');
 });
